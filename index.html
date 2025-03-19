@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그 백업용용</title>
+    <!-- 외부파일 연결-->
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <script>
+      includeHTML(); // 함수수
+    </script>
+    <main>
+      <div>
+        <label for="username">이름 입력:</label>
+        <input type="text" id="username" placeholder="이름을 입력하세요" />
+        <button onclick="updateGreeting()">확인</button>
+
+        <h1 id="greeting">안녕하세요!</h1>
+      </div>
+
+      <div>
+        <label for="logfile">파일 입력:</label>
+        <input
+          type="file"
+          id="logfile"
+          placeholder="파일을 등록하세요요"
+          accept=".html"
+        />
+        <button onclick="getFile()">확인</button>
+        <h1 id="filedata">안녕하세요!</h1>
+      </div>
+    </main>
+  </body>
+</html>
