@@ -14,6 +14,9 @@ function getFile() {
       document.getElementById(
         "filedata"
       ).innerText = `파일 내용:\n${e.target.result}`;
+      document.getElementById(
+        "htmlContent"
+      ).innerHTML = `파일 내용:\n${e.target.result}`;
     };
 
     reader.onerror = function () {
@@ -24,4 +27,22 @@ function getFile() {
   } else {
     alert("파일을 선택해주세요.");
   }
+}
+
+//해싱함수 - class 명을 색이나 이름으로 쓰기에는 맞지 않음.
+function base32Hash(input) {
+  const base32Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+  let total = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    total += input.charCodeAt(i) * (i + 1);
+  }
+
+  let hash = base32Chars[total % base32Chars.length]; // 항상 영어로 시작
+  for (let i = 0; i < 4; i++) {
+    // 5자리 해시
+    hash += base32Chars[(total + i * 13) % base32Chars.length];
+  }
+
+  return hash;
 }

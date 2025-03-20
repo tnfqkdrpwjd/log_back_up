@@ -30,7 +30,15 @@
           accept=".html"
         />
         <button onclick="getFile()">확인</button>
-        <h1 id="filedata">안녕하세요!</h1>
+        <h2>파일 내용:</h2>
+        <div
+          id="htmlContent"
+          style="border: 1px solid #ccc; padding: 10px; min-height: 100px"
+        >
+          여기에 HTML 파일 내용이 표시됩니다.
+        </div>
+        <h3>파일 내용</h3>
+        <div id="filedata"></div>
       </div>
     </main>
   </body>
