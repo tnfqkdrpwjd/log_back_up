@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그 백업용용</title>
+    <title>로그 백업용</title>
     <!-- 외부파일 연결-->
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css" />
@@ -11,22 +11,21 @@
   <body>
     <main>
       <div>
-        <label for="username">이름 입력:</label>
-        <input type="text" id="username" placeholder="이름을 입력하세요" />
-        <button onclick="updateGreeting()">확인</button>
-
-        <h1 id="greeting">안녕하세요!</h1>
-      </div>
-
-      <div>
-        <label for="logfile">파일 입력:</label>
-        <input
-          type="file"
-          id="logfile"
-          placeholder="파일을 등록하세요요"
-          accept=".html"
-        />
-        <button onclick="getFile()">확인</button>
+        <div>
+          <label for="logfile">코코포 파일 등록:</label>
+          <input
+            type="file"
+            id="logfile"
+            placeholder="파일을 등록하세요"
+            accept=".html"
+          />
+          <button onclick="getFile()">확인</button>
+          <button onclick="copyHtml()">복사</button>
+        </div>
+        <div>
+          <dic> 캐릭터 이미지를 설정하려면 아래 버튼을 누르십시오. </dic>
+          <div id="imgSetB"></div>
+        </div>
         <h2>파일 내용:</h2>
         <div
           id="htmlContent"
