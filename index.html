@@ -20,19 +20,17 @@
             accept=".html"
           />
           <button onclick="getFile()">확인</button>
-          <button onclick="copyHtml()">복사</button>
+          <button onclick="copyHtml()">수정된 html 복사</button>
         </div>
         <div>
           <dic> 캐릭터 이미지를 설정하려면 아래 버튼을 누르십시오. </dic>
-          <div id="imgSetB"></div>
+          <div id="imgSetB" class="buttonList"></div>
         </div>
-        <h2>파일 내용:</h2>
+        <h2>파일 미리보기기:</h2>
         <div
           id="htmlContent"
           style="border: 1px solid #ccc; padding: 10px; min-height: 100px"
-        >
-          여기에 HTML 파일 내용이 표시됩니다.
-        </div>
+        ></div>
         <h3>파일 내용</h3>
         <div id="filedata"></div>
       </div>

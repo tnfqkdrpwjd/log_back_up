@@ -74,13 +74,23 @@ function getFile() {
 
       characters.forEach((value, key, map) => {
         style.innerHTML += `.${key} .dialogue { background-color : ${value[1]};
-        
         color : ${isBrightColor(value[1]) ? "#000000" : "#FFFFFF"};} 
         `;
 
         let charButton = document.createElement("button");
         charButton.textContent = value[0]; // 버튼 텍스트 설정
         charButton.setAttribute("class", "charImgSet");
+        //css 추가
+        charButton.style.backgroundColor = value[1];
+        charButton.style.color = isBrightColor(value[1])
+          ? "#000000"
+          : "#FFFFFF";
+        // charButton.style.padding = "2px 5px";
+        charButton.style.margin = "0 3px";
+        charButton.style.height = "2rem";
+        charButton.style.minWidth = "1rem";
+        charButton.style.borderRadius = "3px";
+        charButton.style.border = "0px";
 
         // 버튼 클릭 시 실행될 함수
         charButton.onclick = function () {
@@ -118,19 +128,22 @@ function getFile() {
 
       //이미지 표시안하는 css
       style.innerHTML += `* {font-family : sans-serif;}
-       img {margin : 10px; width: 50px; height: 50px; content : url(https://pbs.twimg.com/profile_banners/1349408517606707202/1674220313/1080x360) }
+       img {margin : 10px; width: 50px; height: 50px; content : url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png) }
        .chatBox { display : flex; margin : 15px;}
        .dialogue {border-radius : 5px;  padding : 10px;}
        .character {}
        .img {}
        .disable {}
        .show {}
-       .hide {display: none}`;
-      //  font-weight:bold;
+       .hide {display: none}
+       .sub-content {opacity: 0.5;}
+       .buttonList{display: flex;align-items: flex-start;}
+       `;
       logFile.head.appendChild(style);
-      //파일 내용 그대로 출력력
-      document.getElementById("filedata").innerText =
-        logFile.documentElement.outerHTML;
+
+      // //파일 내용 그대로 출력력
+      // document.getElementById("filedata").innerText =
+      //   logFile.documentElement.outerHTML;
 
       // html로 표시하기
       document.getElementById("htmlContent").innerHTML =
