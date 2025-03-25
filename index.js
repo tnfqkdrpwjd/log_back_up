@@ -128,7 +128,8 @@ function getFile() {
 
       //이미지 표시안하는 css
       style.innerHTML += `* {font-family : sans-serif;}
-       img {margin : 10px; width: 2rem; height: 2rem; content : url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png) }
+      .charImg {position: relative; margin : 5px 10px 10px 10px; width: 50px; height: 50px; }
+      .charImg img {position: absolute; width: 100%; height: 100%; content : url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png) }
        .chatBox { display : flex; margin : 15px;}
        .dialogue {border-radius : 5px;  padding : 10px;}
        .character {}
