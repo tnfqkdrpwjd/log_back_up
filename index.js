@@ -86,11 +86,11 @@ function getFile() {
           ? '#000000'
           : '#FFFFFF';
         // charButton.style.padding = "2px 5px";
-        charButton.style.margin = '0 3px';
         charButton.style.height = '2rem';
         charButton.style.minWidth = '1rem';
         charButton.style.borderRadius = '3px';
         charButton.style.border = '0px';
+        charButton.style.margin = '5px 3px';
 
         // 버튼 클릭 시 실행될 함수
         charButton.onclick = function () {
@@ -138,7 +138,7 @@ function getFile() {
        .show {}
        .hide {display: none}
        .sub-content {opacity: 0.5;}
-       .buttonList{display: flex;align-items: flex-start;}
+       .buttonList{ display: flex; align-items: flex-start;flex-wrap :wrap}
        `;
       logFile.head.appendChild(style);
 
@@ -185,14 +185,17 @@ function base32Decode(input, first = '') {
   return first + result;
 }
 
-function isBrightColor(hex) {
+function isBrightColor(rgb) {
   // HEX -> R, G, B 변환
-  let r = parseInt(hex.substring(1, 3), 16);
-  let g = parseInt(hex.substring(3, 5), 16);
-  let b = parseInt(hex.substring(5, 7), 16);
+  let match = rgb.match(/\d+/g);
+  if (!match || match.length !== 3) return false; // 유효성 검사
+
+  let r = parseInt(match[0], 10);
+  let g = parseInt(match[1], 10);
+  let b = parseInt(match[2], 10);
 
   // 밝기 공식 (Luminance)
   let brightness = (r * 299 + g * 587 + b * 114) / 1000;
-
-  return brightness > 128; // 128보다 크면 밝은 색
+  console.log('rgb : ' + rgb + '    brightness : ' + brightness);
+  return brightness > 200; // 200보다 크면 밝은 색 (개인취향 )
 }
