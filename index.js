@@ -196,6 +196,6 @@ function isBrightColor(rgb) {
 
   // 밝기 공식 (Luminance)
   let brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  console.log('rgb : ' + rgb + '    brightness : ' + brightness);
+  // console.log('rgb : ' + rgb + '    brightness : ' + brightness);
   return brightness > 200; // 200보다 크면 밝은 색 (개인취향 )
 }
