@@ -161,14 +161,14 @@ function getFile() {
             if (style) {
               // 기존 스타일을 수정하거나 새로운 스타일을 추가할 수 있습니다.
               style.innerHTML += `
-            .${key}  { opacity: 0.5
+            .${key}  { opacity: 0.7
             }
             `;
             } else {
               // 스타일 태그가 없다면 새로 추가
               style = doc.createElement("style");
               style.innerHTML = `
-            .${key} { opacity: 0.5
+            .${key} { opacity: 0.7
             }
             `;
               doc.head.appendChild(style);
